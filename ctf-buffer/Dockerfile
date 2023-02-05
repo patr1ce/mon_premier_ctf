@@ -56,11 +56,11 @@ RUN apt-get install -y vim strace ltrace
 # ROPgadget : https://github.com/JonathanSalwan/ROPgadget
 # pwntools  : http://docs.pwntools.com/en/stable/install.html
 
-RUN apt-get install -y python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
-RUN pip install --upgrade pip
-RUN pip install capstone 
-RUN pip install ropgadget 
-RUN pip install --upgrade pwntools
+RUN apt-get install -y python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential
+RUN pip3 install --upgrade pip
+# RUN pip install capstone 
+# RUN pip install ropgadget 
+# RUN pip install --upgrade pwntools
 
 RUN useradd -d /home/grandmaster -s /bin/dash grandmaster
 
