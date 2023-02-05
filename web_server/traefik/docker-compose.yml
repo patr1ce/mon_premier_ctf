@@ -7,7 +7,6 @@ services:
     container_name: traefik
     ports:
       - "8085:80"
-      - "444:443"
       - "8000:8000"
     networks:
       - webserver_webLAN
