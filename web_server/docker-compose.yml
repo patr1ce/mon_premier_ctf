@@ -19,8 +19,7 @@ services:
       - "traefik.backend=webserver_frontdoor"
       - "traefik.docker.network=webserver_webLAN"
       - "traefik.frontend.rule=Path:/"      
-      - "traefik.frontend.entryPoints=http,https"
-      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.entryPoints=http"
       - "traefik.enable=true"
       - "traefik.port=80"
       - "traefik.default.protocol=http"
@@ -29,8 +28,8 @@ services:
   webserver_nginx:
     image: nginx:latest
     container_name: webserver_nginx
-    #ports:
-    #  - "8888:80"
+    ports:
+      - "8888:80"
     networks:
       - webserver_webLAN
     volumes:
@@ -44,8 +43,7 @@ services:
       - "traefik.docker.network=webserver_webLAN"
       #- "traefik.frontend.rule=PathPrefix:/yoloctf/;ReplacePathRegex: ^/yoloctf/(.*) /$$1"  
       - "traefik.frontend.rule=PathPrefix:/yoloctf/"      
-      - "traefik.frontend.entryPoints=http,https"
-      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.entryPoints=http"
       - "traefik.enable=true"
       - "traefik.port=80"
       - "traefik.default.protocol=http"

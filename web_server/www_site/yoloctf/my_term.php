@@ -22,7 +22,7 @@ $(document).ready(function() {
                     var resp = JSON.parse(data);
                     //$("#ServerStatusctf-shell").html(resp.Name); 
                     var txt = "Xterm status: Running as "+resp.Name;
-                    //txt = '<a href="https://'.$_SERVER['HTTP_HOST'].'/ctf-tool-xterm_'.$_SESSION['uid'].'/" ><pre>[Mon terminal]</pre></a>';
+                    //txt = '<a href="http://'.$_SERVER['HTTP_HOST'].'/ctf-tool-xterm_'.$_SESSION['uid'].'/" ><pre>[Mon terminal]</pre></a>';
                     if (resp.Port  !== undefined ) { 
                     if (resp.Port  !=0) {
                         txt = txt + "</br>Host="+window.location.host; 
@@ -63,7 +63,7 @@ $(document).ready(function() {
         //var_dump($yo);
         //echo '<a href="http://localhost:'.$yo['Port'].'" target="_blank"><pre>[Mon terminal]</pre></a>';
         //echo '<a href="#" onclick="goPort('.$yo['Port'].'); " ><pre>[Mon terminal]</pre></a>';
-        echo '<a href="https://'.$_SERVER['HTTP_HOST'].'/ctf-tool-xterm_'.$_SESSION['uid'].'/" target="_blank"><pre>[Cliquer ICI pour ouvrir mon terminal dans un nouvel onglet]</pre></a>';
+        echo '<a href="http://'.$_SERVER['HTTP_HOST'].'/ctf-tool-xterm_'.$_SESSION['uid'].'/" target="_blank"><pre>[Cliquer ICI pour ouvrir mon terminal dans un nouvel onglet]</pre></a>';
         echo "</br>";
         echo "Sur le nouvel onglet de votre xterm: </br>";
         echo "- Si vous avez un '404 not found', l'instance n'est pas encore up. Atendez 60 secondes et faites un Refresh de la page.</br>";
