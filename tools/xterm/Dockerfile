@@ -1,6 +1,10 @@
 FROM node:8
 
-#RUN apt-get update && apt-get install -y net-tools 
+RUN echo 'deb http://archive.debian.org/debian/ stretch main' > /etc/apt/sources.list \
+    && echo 'deb-src http://archive.debian.org/debian/ stretch main' >> /etc/apt/sources.list \
+    && echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf
+
+RUN apt-get update && apt-get install -y make build-essential
 
 RUN adduser yolo --uid 3022 
 
